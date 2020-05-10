@@ -1,0 +1,6 @@
+$gcolor: #38aef0;
+
+@mixin flexbox {
+    display: flex;
+    justify-content:space-between;
+  }
