@@ -47,12 +47,13 @@
     padding: 20px 20px 0;
     .group{
       margin-bottom:40px;
-      color:#ffffff;
       &__name {
         font-size:15px;
+        color:#ffffff;
         margin-bottom:5px;
       }
       &__message{
+        color:#ffffff;
         font-size:11px;
       }
     }
