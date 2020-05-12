@@ -2,39 +2,27 @@
   .header
     .left-box
       %h2.left-box__group-name
-        test
-      %ul.left-box__member-list
+        = @group.name
+      .left-box__member-list
         Member：
-        %li.left-box__member-list__member
-          masa
+        %ul
+        - @group.users.each do |user|
+          %li.left-box__member-list__name
+            = user.name
 
     .right-box
-      = link_to "#" do
+      = link_to edit_group_path(@group) do
         %p.right-box__btn
           Edit
   .messages
-    .message
-      .message__box
-        %p.message__box__user
-          hoge
-        %p.message__box__time
-          2020/05/09(Sat) 20:50:00
-      %p.message__box__text
-        おはよう
-    .message
-      .message__box
-        %p.message__box__user
-          hoge
-        %p.message__box__time
-          2020/05/09(Sat) 20:50:00
-      %p.message__box__text
-        おはよう
-  .form
-    %form.new-message
-      .message-box
-        %input{type: "text", class: "message-box__text", placeholder: "type a message"}
-        %label{class: "message-box__img"}
-          = icon("fas", "image")
-          %input{type: "file", class: "message-box__img__file"}
-      %input{type: "submit", class: "submit-btn", value:"Send"}
+    = render @messages
 
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'message-box', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__img' do
+          = icon('fas', 'image', class: 'form__mask__img__icon')
+          = f.file_field :image, class: 'form__mask__img__file'
+      = f.submit 'Send', class: 'submit-btn'

@@ -5,8 +5,15 @@
 
 .wrapper{
   display:flex;
-  height:100vh;
-}
+
+
+  
+.side-groups::-webkit-scrollbar{
+  display:none;
+ }
+ .messages::-webkit-scrollbar{
+  display:none;
+ }
 
 .chat-side{
   width:300px;  
@@ -27,16 +34,14 @@
         font-weight:bold;
       }
       .icon {
-        width:60px;
         display:flex;
         a {
           color:white;
+          text-decoration: none;
           }
-        &__edit-user {
-            margin:0 0 0 auto
-            }  
         &__new-group{
             margin-left:5px;
+          
             }
       }
     }
@@ -45,8 +50,13 @@
     background-color:#2f3e51;
     height:calc(100vh - 100px);
     padding: 20px 20px 0;
+    overflow:scroll;
+    scrollbar-width: none;
     .group{
       margin-bottom:40px;
+      a{
+        text-decoration: none;
+      }
       &__name {
         font-size:15px;
         color:#ffffff;
@@ -59,6 +69,7 @@
     }
   }
 }
+
 
 .contents {
   width:calc(100vw - 300px);
@@ -80,7 +91,11 @@
         display:flex;
         font-size:12px;
         color:#999999;
+        list-style: none;
+       &__name {
+          margin-left: 0.3rem;
         }
+       }
       }
     .right-box{
       a {
@@ -97,6 +112,7 @@
     }
   }
   .messages{
+    overflow:scroll;
     background-color:#fafafa;
     height: calc(100vh - 190px);
     padding: 46px 40px;
@@ -125,29 +141,28 @@
 }
 
   .form {
+    position:absolute;
     background-color:#d2d2d2;
     height:90px;
     padding:20px 40px;
-
+    width:calc(100vw - 300px);
     form {
       display:flex;
       .message-box {
-        width:100%;
-        position: relative;
-        &__text {
-          height:50px;
-          width:100%;
-          color: #434a54;
-          border-style: none;
-          padding: 0 0px 0 10px;
-        }
+        width:100%;        
+      }
+      .form__mask {
+        height:50px;
+        color: #434a54;
+        border-style: none;
+        padding: 0 0px 0 10px;
+        position: relative;        
         &__img {
           position: absolute;
           cursor: pointer;
           font-size: 1.3rem;
           top:10px;
-          right:10px;
-          
+          right:20px;           
           &__file {
             display: none;
           }
@@ -163,6 +178,5 @@
        cursor: pointer;
      }
     }
-    
   }
-}
+}}
