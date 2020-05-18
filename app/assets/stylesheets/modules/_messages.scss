@@ -6,15 +6,6 @@
 .wrapper{
   display:flex;
 
-
-  
-.side-groups::-webkit-scrollbar{
-  display:none;
- }
- .messages::-webkit-scrollbar{
-  display:none;
- }
-
 .chat-side{
   width:300px;  
   .header{
@@ -50,8 +41,6 @@
     background-color:#2f3e51;
     height:calc(100vh - 100px);
     padding: 20px 20px 0;
-    overflow:scroll;
-    scrollbar-width: none;
     .group{
       margin-bottom:40px;
       a{
@@ -112,6 +101,7 @@
     }
   }
   .messages{
+    word-wrap: break-word;
     overflow:scroll;
     background-color:#fafafa;
     height: calc(100vh - 190px);
@@ -180,3 +170,11 @@
     }
   }
 }}
+
+.messages::-webkit-scrollbar{
+  display:none;
+}
+
+.side-groups::-webkit-scrollbar{
+  display:none;
+ }
