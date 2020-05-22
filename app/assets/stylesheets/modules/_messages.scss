@@ -30,9 +30,12 @@
           color:white;
           text-decoration: none;
           }
+          &__edit-user{
+            margin-left:0.3rem;
+          }
         &__new-group{
-            margin-left:5px;
-          
+            margin-left:0.3rem;
+          margin-top:0.2rem;
             }
       }
     }
