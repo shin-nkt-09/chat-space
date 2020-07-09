@@ -4,6 +4,9 @@
 - 接続先情報
 - URL：http://18.180.77.181/
 
+### BASIC認証パスワード
+- ID:admin
+- PASS:2222
 ### 確認用アカウント
 - メールアドレス: test@test
 - パスワード:testtest
